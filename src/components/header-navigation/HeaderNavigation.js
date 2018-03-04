@@ -5,27 +5,53 @@ import './HeaderNavigation.css';
 import logo from '../../img/iSolutions_logo.png';
 
 class HeaderNavigation extends Component {
-  render() {
-    return (
-      <div className="header-navigation">
-		<img src={logo} alt="iSolutions_logo" />
-		<div className="header-navigation-links">
-			<ul className="header-navigation-links-ul">
-				<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/portfolio/'>Portfolio</a></li>
-				<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/articles/'>Articles</a></li>
-				<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/training/'>Training</a></li>
-				<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/news/'>News</a></li>
-				<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/locations-2/'>Locations</a></li>
-				<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/who-we-are/'>Who We Are</a></li>
-			</ul>
+	state = {
+		show: false,
+		linksClass: "header-navigation-links",
+		xClass: "header-navigation-menu"
+	};
+
+	handleClick() {
+		if (this.state.show === false) {
+			this.setState({
+				show: true,
+				linksClass: "header-navigation-links-show",
+				xClass: "header-navigation-menu-active"
+			});
+		} else {
+			this.setState({
+				show: false,
+				linksClass: "header-navigation-links",
+				xClass: "header-navigation-menu"
+			});
+		}
+	}
+
+	render() {
+		return (
+		<div className="header">
+			<div className="header-navigation">
+				<img src={logo} alt="iSolutions_logo" />
+				<div className="header-navigation-responsive">
+					<div className={this.state.linksClass}>
+						<ul className="header-navigation-links-ul">
+							<li className="header-navigation-links-ul-li top"><a href='http://isolutions-inc.com/portfolio/'>PORTFOLIO</a></li>
+							<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/articles/'>ARTICLES</a></li>
+							<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/training/'>TRAINING</a></li>
+							<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/news/'>NEWS</a></li>
+							<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/locations-2/'>LOCATIONS</a></li>
+							<li className="header-navigation-links-ul-li"><a href='http://isolutions-inc.com/who-we-are/'>WHO WE ARE</a></li>
+						</ul>
+					</div>
+					<div className={this.state.xClass} onClick={this.handleClick.bind(this)}>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div className="header-navigation-menu">
-			<div className="header-navigation-menu-top"></div>
-			<div className="header-navigation-menu-bottom"></div>
-		</div>
-      </div>
-    );
-  }
+		);
+	}
 }
 
 export default HeaderNavigation;
