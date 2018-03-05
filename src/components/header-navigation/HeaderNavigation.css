@@ -136,6 +136,7 @@
 		display: block;
 		order: 1;
 		position: absolute;
+		z-index: 101;
 	}
 
 	.header-navigation-links-ul {
@@ -145,13 +146,14 @@
 	}
 
 	.top {
-		margin-top: 43px;
+		margin-top: 32px;
 	}
 
 	.header-navigation-links-show {
 		order: 2;
 		text-align: right;
 		position: absolute;
+		z-index: 100;
 		display: flex;
 	}
 

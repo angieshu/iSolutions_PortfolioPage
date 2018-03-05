@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './HeaderName.css';
 
 // img
-import arrowLeft from '../../img/arrow-left-dark.png';
 
 class HeaderName extends Component {
 
@@ -13,7 +12,6 @@ class HeaderName extends Component {
 		<div className="header-name">
 			<div className="header-name-container">
 				<div className="header-name-name">
-					<img scr={arrowLeft} alt-="" />
 					<h1>{this.props.name}</h1>
 				</div>
 				<hr />
