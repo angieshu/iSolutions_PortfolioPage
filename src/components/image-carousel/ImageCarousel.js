@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactInterval from 'react-interval';
 import Slider from 'react-slick';
 import { Player } from 'video-react';
 
@@ -15,21 +14,6 @@ const imgs = [
 ];
 
 class ImageCarousel extends Component {
-	// callbackFunc() {
-	// 	if (this.state.tick === 999) {
-	// 		this.setState({ tick: 0 });
-	// 	} else {
-	// 		this.setState({ tick: this.state.tick + 1 });
-	// 	}
-	// }
-	//
-	// showNextImg() {
-	// 	if (this.state.i === this.state.len - 1) {
-	// 		this.setState({ i: 0 });
-	// 	} else {
-	// 		this.setState({ i: this.state.i + 1 });
-	// 	}
-	// }
 
 	render() {
 		let settings = {
@@ -42,10 +26,6 @@ class ImageCarousel extends Component {
 			prevArrow: <PrevArrow />,
 			nextArrow: <NextArrow />,
 		};
-		// <ReactInterval
-		// timeout={1000}
-		// enabled={true}
-		// callback={this.callbackFunc.bind(this)} />
 
 		return (
 			<div className="image-carousel">
