@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactInterval from 'react-interval';
 import Slider from 'react-slick';
+import { Player } from 'video-react';
 
 import './ImageCarousel.css';
 
@@ -38,8 +39,8 @@ class ImageCarousel extends Component {
 			slidesToScroll: 1,
 			autoplaySpeed: 2500,
 			autoplay: true,
-			// prevArrow: <PrevArrow />,
-			// nextArrow: <NextArrow />,
+			prevArrow: <PrevArrow />,
+			nextArrow: <NextArrow />,
 		};
 		// <ReactInterval
 		// timeout={1000}
@@ -47,13 +48,15 @@ class ImageCarousel extends Component {
 		// callback={this.callbackFunc.bind(this)} />
 
 		return (
-		<div className="image-carousel">
-			<Slider classNAme="image-carousel-slider" {...settings}>
-				{imgs.map((img, i) =>
-					<div className="image-carousel-asset" style={{backgroundImage: 'url("' + img+ '")'}} key={i}></div>
-				)}
-			</Slider>
-		</div>
+			<div className="image-carousel">
+				<Slider {...settings}>
+					{imgs.map((asset, i) => {
+						if (asset.indexOf('mov') >= 0)
+							return <Player><source src={asset} /></Player>
+						return <div className="image-carousel-asset" style={{backgroundImage: 'url("' + asset+ '")'}} key={i}></div>
+					})}
+				</Slider>
+			</div>
 		);
 	}
 }
@@ -65,6 +68,26 @@ ImageCarousel.propTypes = {
 ImageCarousel.defaultProps = {
 	name: 'Collection Catalog Software',
 
+}
+
+class PrevArrow extends Component {
+	render() {
+		return (
+			<div {...this.props} className="slick-prev">
+				<i className="prev-arrow"></i>
+			</div>
+		);
+	}
+}
+
+class NextArrow extends Component {
+	render() {
+		return (
+			<div {...this.props} className="slick-next">
+				<i className="next-arrow"></i>
+			</div>
+		);
+	}
 }
 
 export default ImageCarousel;

@@ -1,0 +1,10 @@
+.info {
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px 60px;
+	display: flex;
+	flex-direction: row;
+	/* justify-content: space-between; */
+	text-align: left;
+}

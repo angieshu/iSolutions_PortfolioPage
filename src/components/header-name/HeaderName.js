@@ -12,7 +12,9 @@ class HeaderName extends Component {
 		<div className="header-name">
 			<div className="header-name-container">
 				<div className="header-name-name">
+					<i className="header-name-arrow-left"></i>
 					<h1>{this.props.name}</h1>
+					<i className="header-name-arrow-right"></i>
 				</div>
 				<hr />
 			</div>

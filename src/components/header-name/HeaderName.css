@@ -13,10 +13,31 @@
 }
 
 .header-name-name {
-	/* display: flex;
+	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: baseline; */
+	align-items: baseline;
+}
+
+.header-name-name > i {
+	border: solid #CFD8DC;
+	border-width: 0 1px 1px 0;
+	display: inline-block;
+	padding: 13px;
+}
+
+.header-name-name > i:hover {
+	border-color: #263238;
+}
+
+.header-name-arrow-left {
+	transform: rotate(135deg);
+   -webkit-transform: rotate(135deg);
+}
+
+.header-name-arrow-right {
+	transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
 
 .header-name-name > h1 {

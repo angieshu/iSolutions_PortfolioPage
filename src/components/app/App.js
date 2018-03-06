@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import HeaderNavigation from '../header-navigation/HeaderNavigation.js';
-import HeaderName from '../header-name/HeaderName.js';
-import ImageCarousel from '../image-carousel/ImageCarousel.js';
+import HeaderNavigation from '../header-navigation/HeaderNavigation';
+import HeaderName from '../header-name/HeaderName';
+import Info from '../info/Info';
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
 	  	<HeaderNavigation />
 	  	<HeaderName />
-	  	<ImageCarousel />
+		<Info />
       </div>
     );
   }
